@@ -1,0 +1,92 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monthsary Love Animation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <style>
+        @keyframes heartAnimation {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes fadeInMessage {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideIn {
+            0% { opacity: 0; transform: translateY(50px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes bgAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        body {
+            animation: bgAnimation 15s ease infinite;
+            background: linear-gradient(45deg, #e0bbf4, #d1c4e9, #b39ddb);
+            background-size: 400% 400%;
+        }
+
+        .hidden { display: none; }
+    </style>
+</head>
+<body class="flex flex-col justify-center items-center min-h-screen text-center p-4">
+
+    <div class="flex flex-col items-center">
+        <div class="text-red-500 text-9xl animate-heartAnimation" style="animation: heartAnimation 1s infinite;">❤️</div>
+        <div class="text-2xl text-gray-800 mt-5 opacity-0 transition-opacity duration-1000 ease-out delay-200" style="animation: fadeInMessage 1s forwards;">
+            Happy Monthsary, Loveey! 💖
+        </div>
+        <button id="surpriseButton" class="mt-8 px-6 py-3 text-lg bg-red-500 text-white rounded-lg hover:bg-red-600 opacity-0 transition-opacity duration-1000 ease-out delay-400 hover:scale-110" style="animation: fadeInMessage 1s forwards;">
+            Click Me for a Surprise
+        </button>
+    </div>
+
+    <div id="surpriseMessage" class="bg-white p-8 rounded-lg shadow-lg max-w-2xl w-full mt-12 hidden opacity-0 transition-opacity duration-1000 ease-out" style="animation: slideIn 1s forwards;">
+        <h1 class="text-4xl text-red-500 mb-4">To My Dearest Loveey,</h1>
+        <p class="text-lg text-gray-700 leading-relaxed">
+            From the moment I met you, my life has been filled with endless joy and happiness. Your smile lights up my darkest days, and your laughter is the sweetest melody to my ears. Every day with you feels like a beautiful dream that I never want to wake up from.
+        </p>
+        <p class="text-lg text-gray-700 leading-relaxed mt-4">
+            You are my rock, my confidant, and my best friend. Your love has given me strength and courage to face any challenge that comes my way. I am grateful for every moment we share, and I cherish the memories we create together.
+        </p>
+        <p class="text-lg text-gray-700 leading-relaxed mt-4">
+            As we celebrate another month of our love, I want you to know how deeply I love you. You are the most precious person in my life, and I am so lucky to have you by my side. Thank you for being you, and for loving me the way you do.
+        </p>
+        <p class="text-lg text-gray-700 leading-relaxed mt-4">
+            I look forward to many more months and years of love, laughter, and happiness with you. You are my everything, and I will always love you with all my heart.
+        </p>
+        <p class="text-lg text-gray-700 leading-relaxed mt-4">
+            Happy Monthsary, my love. Here's to us and our beautiful journey together.
+        </p>
+        <p class="text-lg text-gray-700 leading-relaxed mt-4">
+            Forever yours,
+        </p>
+        <p class="text-lg text-gray-700 leading-relaxed mt-4">
+            [Jomil Gruta]
+        </p>
+    </div>
+
+    <script>
+        document.getElementById('surpriseButton').addEventListener('click', function() {
+            const surpriseMessage = document.getElementById('surpriseMessage');
+            surpriseMessage.classList.remove('hidden');
+            surpriseMessage.classList.add('opacity-100');
+        });
+
+        window.addEventListener('load', () => {
+            const monthsaryMessage = document.querySelector('.opacity-0');
+            monthsaryMessage.classList.add('opacity-100');
+            monthsaryMessage.classList.remove('opacity-0');
+        });
+    </script>
+
+</body>
+</html>
